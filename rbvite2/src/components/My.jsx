@@ -13,7 +13,7 @@ export default function My({ session: { loginUser, cart }, signOut }) {
         <ul>
           {cart.map((item) => (
             <li key={item.id}>
-              {item.name}{" "}
+              {item.name}
               <small className='text-gray-300 ml-2'>
                 ({item.price.toLocaleString()}원)
               </small>
