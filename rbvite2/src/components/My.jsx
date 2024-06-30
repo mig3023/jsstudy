@@ -1,5 +1,6 @@
 import Login from "./Login";
 import Profile from "./Profile";
+import Button from "./atoms/Button";
 
 export default function My({ session: { loginUser, cart }, signOut }) {
   return (
@@ -9,17 +10,18 @@ export default function My({ session: { loginUser, cart }, signOut }) {
       ) : (
         <Login />
       )}
-      <div className='border mt-5'>
+      <div className="mt-5 border">
         <ul>
           {cart.map((item) => (
             <li key={item.id}>
               {item.name}
-              <small className='text-gray-300 ml-2'>
+              <small className="text-gray-300">
                 ({item.price.toLocaleString()}원)
               </small>
             </li>
           ))}
         </ul>
+        <Button text="상품추가" />
       </div>
     </>
   );
